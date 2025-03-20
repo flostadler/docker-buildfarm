@@ -47,7 +47,9 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@pulumi/pulumi": "^3.157.0"
+    "@pulumi/kubernetes": "^4.22.1",
+    "@pulumi/pulumi": "^3.157.0",
+    "@pulumi/tls": "^5.1.1"
   },
   "main": "src/index.ts",
   "license": "Apache-2.0",

@@ -5,7 +5,7 @@ const project = new TypeScriptComponent({
   name: 'docker-buildfarm',
   projenrcTs: true,
 
-  // deps: [],                /* Runtime dependencies of this module. */
+  deps: ['@pulumi/kubernetes', '@pulumi/pulumi', '@pulumi/tls'],
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   // packageName: undefined,  /* The "name" in package.json. */
 });

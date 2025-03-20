@@ -1139,7 +1139,16 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
-"@pulumi/pulumi@^3.157.0":
+"@pulumi/kubernetes@^4.22.1":
+  version "4.22.1"
+  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-4.22.1.tgz#ce9880a44f35736c81751d40e328be957c0f75e8"
+  integrity sha512-1X/x/B1mLEO2b0jSFXVzmo+RxJM9b6QyBrHQqOHIZ+6UaPWWu+D0WfDZ6l6vSKI7ASR0uDQmcXmIs2qjTIa63g==
+  dependencies:
+    "@pulumi/pulumi" "^3.142.0"
+    glob "^10.3.10"
+    shell-quote "^1.6.1"
+
+"@pulumi/pulumi@^3.142.0", "@pulumi/pulumi@^3.157.0":
   version "3.157.0"
   resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.157.0.tgz#b935b90a43945da2e8fbc4e0c5cfdcccf2ef9c74"
   integrity sha512-28XN8M8XLnSgimWYX2TECTlReUifrdxiRsai1rBlmGyMnN+n90bgWSibLqRwOb/AKdDilwfHiY6JrV5/SuNjOQ==
@@ -1178,6 +1187,13 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@pulumi/query/-/query-0.3.0.tgz#f496608e86a18c3dd31b6c533408e2441c29071d"
   integrity sha512-xfo+yLRM2zVjVEA4p23IjQWzyWl1ZhWOGobsBqRpIarzLvwNH/RAGaoehdxlhx4X92302DrpdIFgTICMN4P38w==
+
+"@pulumi/tls@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@pulumi/tls/-/tls-5.1.1.tgz#8f05ba536fd1ec2b3987bfae16dd43f4c4b33bc3"
+  integrity sha512-XSIXU1z/aaDFeQWTnjgHhbDuxEl9k5661mMfVu3DEXNDWUJh96r4qC3yYjxKsRRuuErrkZhWqrkSwi2QEnTrUA==
+  dependencies:
+    "@pulumi/pulumi" "^3.142.0"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
@@ -5982,6 +5998,11 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+
+shell-quote@^1.6.1:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.8.2.tgz#d2d83e057959d53ec261311e9e9b8f51dcb2934a"
+  integrity sha512-AzqKpGKjrj7EM6rKVQEPpB288oCfnrEIuyoT9cyF4nmGa7V8Zk6f7RRqYisX8X9m+Q7bd632aZW4ky7EhbQztA==
 
 shelljs@^0.9.2:
   version "0.9.2"

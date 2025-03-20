@@ -91,7 +91,15 @@
       "type": "build"
     },
     {
+      "name": "@pulumi/kubernetes",
+      "type": "runtime"
+    },
+    {
       "name": "@pulumi/pulumi",
+      "type": "runtime"
+    },
+    {
+      "name": "@pulumi/tls",
       "type": "runtime"
     }
   ],
