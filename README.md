@@ -3,6 +3,10 @@
 This is a Pulumi component that creates a buildkit build farm on Kubernetes.
 
 You can use it like this:
+
+First add the SDK: `pulumi package add https://github.com/flostadler/docker-buildfarm`
+
+You can use it like this to create the buildkit builder:
 ```ts
 import * as k8s from "@pulumi/kubernetes";
 import * as pulumi from "@pulumi/pulumi";
