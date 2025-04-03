@@ -15,6 +15,7 @@ export interface BuildkitBuilderArgs {
   hostname?: pulumi.Input<string>;
   serviceType?: pulumi.Input<string>;
   serviceAnnotations?: pulumi.Input<{ [key: string]: pulumi.Input<string> }>;
+  correctVolumePermissions?: pulumi.Input<boolean>;
 }
 
 export interface PvConfig {
@@ -77,6 +78,23 @@ export class BuildkitBuilder extends pulumi.ComponentResource {
             spec: {
               nodeSelector: args.nodeSelector,
               tolerations: args.tolerations,
+              initContainers: pulumi.output(args.correctVolumePermissions).apply((correctVolumePermissions) => {
+                if (correctVolumePermissions) {
+                  return [{
+                    name: 'correct-volume-permissions',
+                    image: 'busybox',
+                    command: ['sh', '-c', 'chown -R 1000:1000 /home/user/.local/share/buildkit'],
+                    securityContext: {
+                      runAsUser: 0,
+                    },
+                    volumeMounts: [{
+                      name: 'buildkitd',
+                      mountPath: '/home/user/.local/share/buildkit',
+                    }]
+                  }]
+                }
+                return [];
+              }),
               containers: [
                 {
                   name: 'buildkitd',
