@@ -14,6 +14,7 @@ export interface BuildkitBuilderArgs {
   resources?: pulumi.Input<k8s.types.input.core.v1.ResourceRequirements>;
   hostname?: pulumi.Input<string>;
   serviceType?: pulumi.Input<string>;
+  serviceAnnotations?: pulumi.Input<{ [key: string]: pulumi.Input<string> }>;
 }
 
 export interface PvConfig {
@@ -186,11 +187,18 @@ export class BuildkitBuilder extends pulumi.ComponentResource {
           labels: {
             app: `${name}-buildkitd`,
           },
-          annotations: args.hostname
-            ? {
-                'external-dns.alpha.kubernetes.io/hostname': args.hostname,
+          annotations: pulumi
+            .output(args.serviceAnnotations)
+            .apply((annotations) => {
+              if (args.hostname) {
+                return {
+                  'external-dns.alpha.kubernetes.io/hostname': args.hostname,
+                  ...annotations,
+                };
+              } else {
+                return annotations ?? {};
               }
-            : undefined,
+            }),
         },
         spec: {
           ports: [
